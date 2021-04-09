@@ -21,25 +21,26 @@ public class App
         animal.favouriteActivity = "run";
         animal.favouriteFood = "bones";
 
-        Adopter adopter = new Adopter();
-        adopter.name = "John";
+        Adopter adopter = new Adopter("John","male",12);
         adopter.money = 100;
 
-        Vet vet = new Vet();
-        vet.name = "Anna";
-        vet.specialization = "canine and feline";
-
-        RecreationActivity activity = new RecreationActivity();
-        activity.name = "play";
-
-        AnimalFood food = new AnimalFood();
-        food.name = "dog food";
-        food.quantity = 15;
-        food.price = 1.5;
+        AnimalFood food = new AnimalFood("bones",15,1.5);
         food.inStock = true;
         food.expiryDate = LocalDate.of(2021, 11, 30);
 
+        adopter.feed(animal, food);
+
+        Vet vet = new Vet("Anna", "female", 30);
+        vet.specialization = "canine and feline";
+
+        RecreationActivity activity = new RecreationActivity();
+        activity.name = "play sticks";
+
+        adopter.activity(animal,activity);
 
 
+
+
+        Dog dog = new Dog();
     }
 }

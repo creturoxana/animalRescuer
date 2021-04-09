@@ -1,7 +1,31 @@
 package org.example;
 
-public class Adopter {
+public class Adopter extends Human {
 
-    String name;
-    double money;
+  double money;
+
+  public Adopter(String name, String sex, int age) {
+    super(name, sex, age);
+  }
+
+  public void feed(Animal animal, AnimalFood animalFood) {
+    System.out.println(super.name + " just gave some " + animalFood.name + " to " + animal.name);
+    animal.hungerLevel--;
+    if(animalFood.name == animal.favouriteFood){
+      //animal.temperLevel++;
+      System.out.println(animal.temperLevel+=1);
+    }
+  }
+
+
+  public void activity(Animal animal, RecreationActivity activity) {
+    System.out.println(super.name + " " + activity.name + " with " + animal.name);
+    animal.temperLevel++;
+    if(activity.name == animal.favouriteActivity) {
+      animal.temperLevel+=2;
+    }
+    else animal.temperLevel++;
+
+  }
+
 }
