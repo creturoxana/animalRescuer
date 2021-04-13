@@ -12,29 +12,29 @@ public class App
     {
 
         Animal animal = new Animal();
-        animal.name = "Gigi";
-        animal.type = "dog";
-        animal.age = 0.6;
-        animal.healthLevel = 9;
-        animal.hungerLevel = 7;
-        animal.temperLevel = 8.5;
-        animal.favouriteActivity = "run";
-        animal.favouriteFood = "bones";
+        animal.setName("Gigi");
+        animal.setType("dog");
+        animal.setAge(0.6);
+        animal.setHealthLevel(9);
+        animal.setHungerLevel(7);
+        animal.setTemperLevel(8.5);
+        animal.setFavouriteActivity("run");
+        animal.setFavouriteFood("bones");
 
         Adopter adopter = new Adopter("John","male",12);
         adopter.money = 100;
 
         AnimalFood food = new AnimalFood("bones",15,1.5);
-        food.inStock = true;
-        food.expiryDate = LocalDate.of(2021, 11, 30);
+        food.setInStock(true);
+        food.setExpiryDate(LocalDate.of(2021, 11, 30));
 
         adopter.feed(animal, food);
 
         Vet vet = new Vet("Anna", "female", 30);
-        vet.specialization = "canine and feline";
+        vet.setSpecialization("canine and feline");
 
         RecreationActivity activity = new RecreationActivity();
-        activity.name = "play sticks";
+        activity.setName("play sticks");
 
         adopter.activity(animal,activity);
 

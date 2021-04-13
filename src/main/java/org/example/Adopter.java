@@ -9,22 +9,25 @@ public class Adopter extends Human {
   }
 
   public void feed(Animal animal, AnimalFood animalFood) {
-    System.out.println(super.name + " just gave some " + animalFood.name + " to " + animal.name);
-    animal.hungerLevel--;
-    if(animalFood.name.equals(animal.favouriteFood)){
+    System.out.println(super.getName() + " just gave some " + animalFood.getName() + " to " + animal.getName());
+    animal.setHungerLevel(animal.getHungerLevel() - 1);
+    if(animalFood.getName().equals(animal.getFavouriteFood())){
       //animal.temperLevel++;
-      System.out.println(animal.temperLevel+=1);
+      animal.setTemperLevel(animal.getTemperLevel() + 1);
+      System.out.println(animal.getTemperLevel());
     }
   }
 
 
   public void activity(Animal animal, RecreationActivity activity) {
-    System.out.println(super.name + " " + activity.name + " with " + animal.name);
-    animal.temperLevel++;
-    if(activity.name.equals(animal.favouriteActivity)) {
-      animal.temperLevel+=2;
+    System.out.println(super.getName() + " " + activity.getName() + " with " + animal.getName());
+    animal.setTemperLevel(animal.getTemperLevel() + 1);
+    if(activity.getName().equals(animal.getFavouriteActivity())) {
+      animal.setTemperLevel(animal.getTemperLevel() + 2);
+
     }
-    else animal.temperLevel++;
+    else animal.setTemperLevel(animal.getTemperLevel() + 1);
+
 
   }
 
