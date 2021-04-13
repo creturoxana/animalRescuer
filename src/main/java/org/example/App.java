@@ -42,5 +42,8 @@ public class App
 
 
         Dog dog = new Dog();
+        dog.positiveMood();
+
+        animal.positiveMood();
     }
 }
